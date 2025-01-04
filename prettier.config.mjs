@@ -4,9 +4,9 @@
  */
 const config = {
   tabWidth: 2,
-  trailingComma: "all",
+  trailingComma: 'all',
   semi: false,
   singleQuote: true,
-};
+}
 
-export default config;
+export default config

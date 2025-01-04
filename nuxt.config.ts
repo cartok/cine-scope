@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
-  compatibilityDate: "2025-11-01",
+  compatibilityDate: '2025-11-01',
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/eslint"],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint'],
   eslint: {},
   tailwindcss: {
     config: {
@@ -11,11 +11,11 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    "/": { prerender: true },
+    '/': { prerender: true },
   },
   nitro: {
     vercel: {
-      regions: ["fra1"],
+      regions: ['fra1'],
     },
   },
-});
+})

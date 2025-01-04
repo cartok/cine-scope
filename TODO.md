@@ -60,7 +60,7 @@ Could create a minimalistic search UI in the header, which would redirect to the
 
 ## 7. Improve Quality
 
-- [ ] prettier
+- [x] prettier
 - [ ] vue-axe-next
 - [ ] check and improve on web vitals
 - [ ] (optional) i18n
