@@ -25,6 +25,16 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.includeCompletionsForImportStatements": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "[vue]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always",
+      // Mit eslint-plugin-unused-imports
+      "source.organizeImports": "never",
+      "source.addMissingImports": "always"
+    }
+  },
   "[typescriptreact]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -91,5 +101,5 @@
     "**/node_modules": true,
     "**/.next": true,
     "**/target": true
-  },
+  }
 }
