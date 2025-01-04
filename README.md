@@ -4,17 +4,23 @@
 
 1. Filmliste erstellen: Entwickle eine Webanwendung, die eine Liste von Filmen anzeigt.
 
-- Filter- und Suchfunktion: Ermögliche es Nutzern, Filme nach Kategorien zu filtern und nach
-  Titel zu suchen.
-- Sortierfunktion: Implementiere eine Sortierung der Filme (z. B. nach Titel, Erscheinungsjahr).
+   - Filter- und Suchfunktion: Ermögliche es Nutzern, Filme nach Kategorien zu filtern und nach
+     Titel zu suchen.
+   - Sortierfunktion: Implementiere eine Sortierung der Filme (z. B. nach Titel, Erscheinungsjahr).
 
-2. Detailansicht: Filme sollen anklickbar sein und eine Detailansicht mit weiteren Informationen
-   öffnen.
-3. Nutze folgende Technologien:
+1. Detailansicht: Filme sollen anklickbar sein und eine Detailansicht mit weiteren Informationen öffnen.
+1. Nutze folgende Technologien:
 
-- Frameworks: Next.js / Nuxt.js
-- Styling: CSS Preprocessor, optional Tailwind
-- API: TMDB (The Movie Database)
-- Code Management: Git (GitHub/GitLab Repository)
+   - Frameworks: Next.js / Nuxt.js
+   - Styling: CSS Preprocessor, optional Tailwind
+   - API: TMDB (The Movie Database)
+   - Code Management: Git (GitHub/GitLab Repository)
 
-4. Deployment: Zeige deine Lösung lokal oder deploye sie im Idealfall mit Vercel oder Netlify.
+1. Deployment: Zeige deine Lösung lokal oder deploye sie im Idealfall mit Vercel oder Netlify.
+
+### Umsetzung
+
+- Framework: Nuxt.js
+- Styling: Tailwind
+- Code Management: GitHub
+- Deplopyment: Vercel
