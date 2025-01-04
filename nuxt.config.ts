@@ -11,7 +11,9 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/': { prerender: true },
+    '/': { prerender: true, redirect: '/filter' },
+    '/filter': { isr: true },
+    '/details/**': { static: 3600 },
   },
   nitro: {
     vercel: {
