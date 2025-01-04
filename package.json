@@ -1,11 +1,10 @@
 {
-  "name": "nuxt-app",
+  "name": "cine-scope",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
@@ -20,5 +19,9 @@
     "nuxt": "^3.15.0",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "glob": "^11.0.0",
+    "vercel": "^39.2.5"
   }
 }

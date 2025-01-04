@@ -1,75 +1,20 @@
-# Nuxt Minimal Starter
+# Cine Scope
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Challenge 1: Entwicklung der Anwendung
 
-## Setup
+1. Filmliste erstellen: Entwickle eine Webanwendung, die eine Liste von Filmen anzeigt.
 
-Make sure to install dependencies:
+- Filter- und Suchfunktion: Ermögliche es Nutzern, Filme nach Kategorien zu filtern und nach
+  Titel zu suchen.
+- Sortierfunktion: Implementiere eine Sortierung der Filme (z. B. nach Titel, Erscheinungsjahr).
 
-```bash
-# npm
-npm install
+2. Detailansicht: Filme sollen anklickbar sein und eine Detailansicht mit weiteren Informationen
+   öffnen.
+3. Nutze folgende Technologien:
 
-# pnpm
-pnpm install
+- Frameworks: Next.js / Nuxt.js
+- Styling: CSS Preprocessor, optional Tailwind
+- API: TMDB (The Movie Database)
+- Code Management: Git (GitHub/GitLab Repository)
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+4. Deployment: Zeige deine Lösung lokal oder deploye sie im Idealfall mit Vercel oder Netlify.

@@ -11,4 +11,12 @@ export default defineNuxtConfig({
       },
     },
   },
+  routeRules: {
+    "/": { static: true },
+  },
+  nitro: {
+    vercel: {
+      regions: ["fra1"],
+    },
+  },
 });
