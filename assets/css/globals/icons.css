@@ -1,0 +1,16 @@
+.g-icon {
+  width: auto;
+  align-self: stretch;
+}
+
+.g-icon-fixed-16 {
+  width: 16px;
+}
+
+.g-icon-fixed-24 {
+  width: 24px;
+}
+
+.g-icon-inline-100 {
+  width: 1em;
+}

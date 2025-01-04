@@ -2,17 +2,17 @@
 
 ## 1. Base
 
-- [ ] create layout
-  - [ ] header
-    - [ ] logo/name
-    - [ ] nav
-    - [ ] searchbar
-  - [ ] content area
-- [ ] create empty pages
-  - [ ] /
-    - [ ] redirect from `/` to `/filter` for now
-  - [ ] /filter
-  - [ ] /details
+- [x] create layout
+  - [x] header
+    - [x] logo/name
+    - [x] nav
+    - [x] searchbar
+  - [x] content area
+- [x] create empty pages
+  - [x] /
+    - [x] redirect from `/` to `/filter` for now
+  - [x] /filter
+  - [x] /details
 
 ## 2. Searchbar Functionality
 

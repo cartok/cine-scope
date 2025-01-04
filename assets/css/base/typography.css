@@ -1,0 +1,47 @@
+:root {
+  --font-sans: 'Roboto Flex';
+  --font-serif: 'Rokkitt';
+  --font-heading: 'Teko';
+
+  --font-slnt-1: 10;
+  --font-slnt-2: 25;
+
+  --font-ps-1: 0.5rem;
+  --font-ps-2: 0.625rem;
+  --font-ps-3: 0.75rem;
+  --font-ps-4: 1rem;
+  --font-ps-5: 1.25rem;
+  --font-ps-6: 1.532rem;
+  --font-ps-7: 1.75rem;
+  --font-ps-8: 2rem;
+  --font-ps-9: 3rem;
+  --font-ps-10: 4rem;
+
+  --font-pw-1: 100;
+  --font-pw-2: 200;
+  --font-pw-3: 300;
+  --font-pw-4: 400;
+  --font-pw-5: 500;
+  --font-pw-6: 600;
+  --font-pw-7: 700;
+  --font-pw-8: 800;
+  --font-pw-9: 900;
+
+  --font-hs-1: 1rem;
+  --font-hs-2: 1.5rem;
+  --font-hs-3: 1.75rem;
+  --font-hs-4: 2rem;
+  --font-hs-5: 3rem;
+
+  --font-hw-1: 200;
+  --font-hw-2: 400;
+  --font-hw-3: 600;
+  --font-hw-4: 700;
+  --font-hw-5: 800;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-variation-settings: 'wght' var(--font-pw-4);
+  color: var(--color-text);
+}

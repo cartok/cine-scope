@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ms-vscode.vscode-typescript-next",
+    "sburg.vscode-javascript-booster",
+    "Nuxt.mdc",
+    "esbenp.prettier-vscode",
+    "Vue.volar",
+    "antfu.goto-alias",
+    "pucelle.vscode-css-navigation",
+    "EditorConfig.EditorConfig",
+    "dbaeumer.vscode-eslint"
+  ],
+  "unwantedRecommendations": ["octref.vetur", "pranaygp.vscode-css-peek"]
+}

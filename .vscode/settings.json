@@ -1,20 +1,29 @@
 {
-  // # Extension settings
-  // ## EditorConfig.EditorConfig
+  // EXTENSION: EditorConfig.EditorConfig
   "files.trimTrailingWhitespace": false,
   "files.insertFinalNewline": false,
 
-  // ## dbaeumer.vscode-eslint
+  // EXTENSION: dbaeumer.vscode-eslint
   "eslint.useFlatConfig": true,
 
-  // # General settings
-  // ## Code formatting, wrapping, auto-fix and auto-import.
+  // "editor.quickSuggestions": {
+  //   "other": true,
+  //   "comments": false,
+  //   "strings": true
+  // },
+
+  // Allow CSS `@scope` rule
+  "css.lint.unknownAtRules": "ignore",
+
+  // Code formatting, wrapping, auto-fix and auto-import.
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.suggest.autoImports": true,
   "typescript.preferences.preferTypeOnlyAutoImports": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.includeCompletionsForImportStatements": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  // "editor.wordWrap": "wordWrapColumn",
+  // "editor.wordWrapColumn": 90,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
@@ -22,6 +31,7 @@
     "source.organizeImports": "never",
     "source.addMissingImports": "always"
   },
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 100
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

@@ -1,0 +1,15 @@
+.g-button {
+  display: inline-grid;
+  place-content: center;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: var(--color-highlight);
+  }
+}
+
+.g-button-square {
+  @extend .g-button;
+  padding: var(--space-2);
+  aspect-ratio: 1;
+}
