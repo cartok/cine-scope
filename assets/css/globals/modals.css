@@ -1,0 +1,6 @@
+.g-modal {
+  background-color: grey;
+  width: 100%;
+  max-width: 60vw;
+  padding: var(--space-5);
+}

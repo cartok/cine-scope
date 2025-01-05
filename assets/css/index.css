@@ -1,0 +1,7 @@
+@layer reset, base, globals;
+
+@import './base/index.css' layer(base);
+@import './reset.css' layer(reset);
+
+/* The globals exist only temporarily. */
+@import './globals/index.css' layer(globals);

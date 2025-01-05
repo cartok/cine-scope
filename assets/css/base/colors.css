@@ -1,0 +1,24 @@
+:root {
+  color-scheme: light dark;
+
+  --color-primary-500: red;
+  --color-secondary-500: blue;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-neutral-500: grey;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-fg: --color-black;
+    --color-bg: --color-white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fg: --color-white;
+    --color-bg: --color-black;
+  }
+}

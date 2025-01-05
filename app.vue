@@ -1,9 +1,11 @@
 <template>
-  <ul class="fixed opacity-0 pointer-events-none">
+  <ul ref="skipLinks" class="skip-links">
     <li>
-      <a ref="skipLink" href="#main" class="skip-link">Skip to main content</a>
+      <a href="#nav">Skip to navigation</a>
+      <a href="#main">Skip to main content</a>
     </li>
   </ul>
+  <div class="g-icon-fixed-16"></div>
   <div>
     <NuxtLayout>
       <NuxtPage />
@@ -11,21 +13,29 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const skipLink = ref()
+const skipLinks = ref()
+
+onMounted(() => {
+  skipLinks.value.firstChild.focus()
+})
 
 watch(
   () => route.path,
   () => {
-    skipLink.value.focus()
+    skipLinks.value.firstChild.focus()
   },
 )
-
-onMounted(() => {
-  skipLink.value.focus()
-})
 </script>
+
+<style scoped>
+.skip-links {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+</style>
