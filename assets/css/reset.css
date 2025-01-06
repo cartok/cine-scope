@@ -10,10 +10,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  min-height: 100vh;
-}
-
 * {
   font: inherit;
   margin: 0;
@@ -27,9 +23,8 @@ body {
 
 button {
   cursor: pointer;
-
   &:disabled {
-    cursor: var(--cursor-disabled, pointer);
+    cursor: default;
   }
 }
 
@@ -54,6 +49,7 @@ svg {
   height: auto;
 }
 
+a,
 a:active,
 a:hover,
 a:visited {
@@ -70,4 +66,26 @@ link:not([draggable]),
 button:not([draggable]) {
   -webkit-user-drag: none;
   touch-action: none;
+}
+
+*:focus-visible {
+  outline-width: var(--width-focus-visible-outline, 2px);
+  outline-offset: 0px;
+  outline-style: solid;
+}
+
+input:focus-visible {
+  outline: unset;
+}
+
+@media (prefers-color-scheme: light) {
+  *:focus-visible {
+    outline-color: var(--color-focus-visible-outline--light, black);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  *:focus-visible {
+    outline-color: var(--color-focus-visible-outline--dark, white);
+  }
 }

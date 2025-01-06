@@ -3,14 +3,23 @@
   "files.trimTrailingWhitespace": false,
   "files.insertFinalNewline": false,
 
+  // Editor performance & clean search
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.nuxt": true
+  },
+  "search.exclude": {
+    ".output": true,
+    ".nuxt": true,
+    ".vercel": true,
+    ".vscode": true
+  },
+
   // EXTENSION: dbaeumer.vscode-eslint
   "eslint.useFlatConfig": true,
 
-  // "editor.quickSuggestions": {
-  //   "other": true,
-  //   "comments": false,
-  //   "strings": true
-  // },
+  // EXTENSION: antfu.goto-alias
+  "editor.gotoLocation.multipleDefinitions": "goto",
 
   // Allow CSS `@scope` rule
   "css.lint.unknownAtRules": "ignore",
@@ -22,16 +31,35 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.includeCompletionsForImportStatements": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  // "editor.wordWrap": "wordWrapColumn",
-  // "editor.wordWrapColumn": 90,
+  "editor.wordWrapColumn": 90,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.organizeImports": "never",
     "source.addMissingImports": "always"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 }

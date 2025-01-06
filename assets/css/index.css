@@ -3,5 +3,5 @@
 @import './base/index.css' layer(base);
 @import './reset.css' layer(reset);
 
-/* The globals exist only temporarily. */
-@import './globals/index.css' layer(globals);
+/* These should become components later. */
+@import './components/index.css' layer(globals);

@@ -1,0 +1,55 @@
+.g-modal {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(auto, var(--layout-content-max-width));
+  align-content: start;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+
+  cursor: pointer;
+  > * {
+    cursor: initial;
+  }
+}
+
+.g-modal-layout-main {
+  grid-template-areas: '.' 'content';
+  grid-template-rows: var(--layout-header-height) auto;
+  /* TODO: Maybe define modal widths in the instances and use variables for unification to be more flexible - the search modal should be customizable. */
+  grid-template-columns: calc(var(--layout-content-max-width) - 400px);
+  gap: var(--space-12);
+}
+
+.g-modal-content {
+  grid-area: content;
+
+  display: grid;
+  align-content: start;
+  justify-content: stretch;
+  justify-items: stretch;
+  background-color: transparent;
+}
+
+:root {
+  --modal-border-radius: 8px;
+}
+
+/* TODO: Set `padding`s in modal instances to have better control over scrollbar positions */
+
+.g-modal-content-header {
+  padding: var(--space-4);
+  border-radius: var(--modal-border-radius) var(--modal-border-radius) 0px 0px;
+  background-color: var(--color-bg);
+  border-bottom: solid var(--color-neutral-500) 1px;
+}
+
+.g-modal-content-body {
+  padding: var(--space-4);
+  border-radius: 0px 0px var(--modal-border-radius) var(--modal-border-radius);
+  background-color: var(--color-bg);
+}

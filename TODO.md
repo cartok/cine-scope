@@ -10,17 +10,16 @@
   - [x] content area
 - [x] create empty pages
   - [x] /
-    - [x] redirect from `/` to `/filter` for now
-  - [x] /filter
+  - [x] /scope
   - [x] /details
 
 ## 2. Searchbar Functionality
 
-- [ ] implement plain text search (first page results are enough).
+- [x] implement plain text search (first page results are enough).
 
-## 3. Movie-Detail Page
+## 3. Movie-Detail Page (minimalistic)
 
-- [ ] create movie detail page content
+- [x] create movie detail page content
 
 ## 4. Base Filtering & Sorting
 
@@ -39,32 +38,31 @@ Could create a minimalistic search UI in the header, which would redirect to the
   - [ ] title (asc)
   - [ ] title (desc)
   - [ ] release_date
-  - [ ] ... others
+  - [ ] ... other
 
 ## 5. Advanced Filtering
 
 - [ ] add more filters
-- [ ] maybe dropdown UI instead of table UI
+- [ ] dropdown UI instead of table UI
 
 ## 6. Improve UI
 
-- [ ] general
-  - [ ] font(s): https://google-fonts.nuxtjs.org/getting-started/setup
-        use `fontaine`?
-  - [ ] style
-  - [ ] (optional) animations
-  - [ ] (optional) logo
-  - [ ] (optional) dark/light mode
-- [ ] tablet
-- [ ] mobile
+- [ ] finish dark/light mode & material colors
+- [ ] tablet & mobile optimizations, breakpoints
+      thereby make use of these features and maybe more: - https://vueuse.org/core/useScreenOrientation/ - https://vueuse.org/core/useScreenSafeArea/ - https://vueuse.org/core/useSSRWidth/
+- [ ] RTL?
+- [ ] material typography
+- [ ] create logo as svg
 
 ## 7. Improve Quality
 
 - [x] prettier
-- [ ] vue-axe-next
+- [ ] resolve all 'TODO' comments
+- [ ] for a11y use vue-axe-next but take a look at WAVE aswell
 - [ ] check and improve on web vitals
-- [ ] (optional) i18n
-- [ ] (optional) git commit and push hooks
+- [ ] i18n
+- [ ] serve fonts statically
+- [ ] git commit and push hooks
 
 ## x. Add start page content
 
@@ -73,3 +71,8 @@ Not a part of the task.
 - Current Cinema Program -> /movie/now_playing
 - Popular -> /movie/popular
 - Top Rated -> /movie/top_rated
+- ... other
+
+## VUE USE!
+
+Absolut abartig gute library... wirklich unglaublich. Braucht einiges an Zeit, die library ist riesig und deckt echt alles mögliche sauber ab. Muss man sich Zeit zum stöbern nehmen, sonst verpasst man einiges und schreib code den es bereits gibt. Einfach heftigster Kraftschock(?). :o

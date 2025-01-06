@@ -1,14 +1,13 @@
 <!-- Should propably create it in Figma instead. -->
+
 <template>
-  <NuxtLink to="/">
-    <h1 class="items">
-      <span class="cine">
-        <span class="c">C</span>
-        <span class="ine">ine</span>
-      </span>
-      <span class="scope">Sc<MagnifyingGlassCircleIcon class="g-icon" />pe</span>
-    </h1>
-  </NuxtLink>
+  <h1 class="items">
+    <span class="cine">
+      <span class="c">C</span>
+      <span class="ine">ine</span>
+    </span>
+    <span class="scpe">Sc<MagnifyingGlassCircleIcon class="g-icon" />pe</span>
+  </h1>
 </template>
 
 <script lang="ts" setup>
@@ -21,6 +20,8 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid'
   grid-auto-flow: column;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cine {
@@ -29,6 +30,7 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid'
   align-items: center;
   gap: 4px;
 }
+
 .c {
   font-family: Monoton;
   font-size: 68px;
@@ -39,7 +41,7 @@ import { MagnifyingGlassCircleIcon } from '@heroicons/vue/24/solid'
   font-size: 50px;
 }
 
-.scope {
+.scpe {
   font-family: Aldrich;
   margin-top: 8px;
   font-size: 50px;

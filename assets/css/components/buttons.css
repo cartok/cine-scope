@@ -1,0 +1,20 @@
+.g-button {
+  display: inline-grid;
+  place-content: center;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: var(--color-secondary-500);
+  }
+}
+
+:root {
+  --button-square-size: 40px;
+}
+
+.g-button-square {
+  background-color: var(--color-primary-500);
+  padding: var(--space-2);
+  height: var(--button-square-size);
+  width: var(--button-square-size);
+}

@@ -1,0 +1,106 @@
+/* TODO: Generate with "Material Theme Builder" */
+
+:root {
+  --font-sans: 'Roboto Flex';
+  --font-serif: 'Rokkitt';
+  --font-extra: 'Teko';
+
+  --font-slnt-1: 10;
+  --font-slnt-2: 25;
+
+  --font-ps-1: 0.5rem;
+  --font-ps-2: 0.625rem;
+  --font-ps-3: 0.75rem;
+  --font-ps-4: 1rem;
+  --font-ps-5: 1.25rem;
+  --font-ps-6: 1.5rem;
+  --font-ps-7: 1.75rem;
+  --font-ps-8: 2rem;
+  --font-ps-9: 3rem;
+  --font-ps-10: 4rem;
+
+  --font-pw-1: 100;
+  --font-pw-2: 200;
+  --font-pw-3: 300;
+  --font-pw-4: 400;
+  --font-pw-5: 500;
+  --font-pw-6: 600;
+  --font-pw-7: 700;
+  --font-pw-8: 800;
+  --font-pw-9: 900;
+
+  --font-hs-1: 1rem;
+  --font-hs-2: 1.5rem;
+  --font-hs-3: 2rem;
+  --font-hs-4: 2.5rem;
+  --font-hs-5: 3rem;
+
+  --font-hw-1: 200;
+  --font-hw-2: 400;
+  --font-hw-3: 600;
+  --font-hw-4: 700;
+  --font-hw-5: 800;
+}
+
+/* Der Import wirft ein Warning weil imports am Anfang stehen sollen, aber wenn ich ihn an den Anfang schiebe gibt's Probleme mit den CSS layers, reset überschreibt dann base... Keine Ahnung warum. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,YTAS,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,649..854,715,416..570,528..760&display=block');
+
+.g-text-title {
+  font-family: var(--font-extra);
+
+  /* TODO: Finish basic typography rules. */
+  .g-typography & + .g-text-body {
+    margin-top: 1rem;
+  }
+}
+
+.g-text-title-large {
+  font-size: var(--font-hs-5);
+  font-variation-settings: 'wght' var(--font-hw-2);
+}
+
+.g-text-title-medium {
+  font-size: var(--font-hs-4);
+  font-variation-settings: 'wght' var(--font-hw-1);
+}
+
+.g-text-title-small {
+  font-size: var(--font-hs-3);
+  font-variation-settings: 'wght' var(--font-hw-2);
+}
+
+.g-text-body {
+  font-family: var(--font-sans);
+}
+
+.g-text-body-large {
+  font-size: var(--font-ps-7);
+  font-variation-settings:
+    'wdth' 90,
+    'GRAD' 150,
+    'YTUC' 750,
+    'YTLC' 450;
+}
+
+.g-text-body-medium {
+  font-size: var(--font-ps-6);
+}
+
+.g-text-body-small {
+  font-size: var(--font-ps-5);
+  font-variation-settings:
+    'GRAD' 130,
+    'wght' 400;
+}
+
+.g-text-label {
+  font-family: var(--font-sans);
+}
+
+.g-text-label-normal {
+  font-size: var(--font-ps-3);
+  font-variation-settings:
+    'wght' var(--font-pw-4),
+    'GRAD' 100;
+  color: var(--color-fg);
+}

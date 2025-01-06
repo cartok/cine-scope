@@ -1,16 +1,33 @@
 <template>
   <nav class="navigation">
     <ul class="list">
-      <li class="item">
-        <NuxtLink class="g-link" to="/">Explore</NuxtLink>
+      <li>
+        <!-- TO -->
+        <NuxtLink
+          class="g-link g-link-text"
+          to="/scope"
+          exact-active-class="g-link-text-active"
+        >
+          Scope
+        </NuxtLink>
       </li>
       <div class="separator" />
       <li>
-        <NuxtLink to="/filter">Filter</NuxtLink>
+        <NuxtLink
+          class="g-link g-link-text"
+          exact-active-class="g-link-text-active"
+          to="/discover"
+        >
+          Discover
+        </NuxtLink>
       </li>
     </ul>
   </nav>
 </template>
+
+<script setup lang="ts">
+const routeMatchesPath = useRouteMatchesPath()
+</script>
 
 <style>
 .list {
@@ -18,6 +35,7 @@
   grid-auto-flow: column;
   gap: 1rem;
   font-size: var(--font-ps-5);
+  white-space: nowrap;
 }
 
 .separator {
