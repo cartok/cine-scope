@@ -1,31 +1,39 @@
-@import './dark-hc.css';
+/* @import './dark-hc.css';
 @import './dark-mc.css';
 @import './dark.css';
 @import './light-hc.css';
 @import './light-mc.css';
-@import './light.css';
+@import './light.css'; */
 
 :root {
   color-scheme: light dark;
 
-  --color-primary-500: red;
-  --color-secondary-500: blue;
+  --color-primary-500: rgb(255, 0, 0);
+  --color-secondary-500: rgb(62, 162, 162);
 
   --color-white: #ffffff;
   --color-black: #000000;
   --color-neutral-500: grey;
 }
 
+/* Only the variables below should be used. */
+/* Die Idee geht wohl doch nicht auf... */
+
 @media (prefers-color-scheme: light) {
   :root {
-    --color-fg: --color-black;
-    --color-bg: --color-white;
+    --color-fg: var(--color-black);
+    --color-bg: var(--color-white);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-fg: --color-white;
-    --color-bg: --color-black;
+    --color-fg: var(--color-white);
+    --color-bg: var(--color-black);
   }
+}
+
+body {
+  color: var(--color-fg);
+  background-color: var(--color-bg);
 }

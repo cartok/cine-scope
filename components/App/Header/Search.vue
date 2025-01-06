@@ -1,59 +1,46 @@
 <template>
   <button class="g-button g-button-square">
-    <MagnifyingGlassIcon class="g-icon g-icon-fixed-24" @click="open" />
+    <MagnifyingGlassIcon class="g-icon g-icon-fixed-24" @click="isOpen = !isOpen" />
   </button>
-  <Dialog ref="modalRef" :open="isOpen" @close="close">
-    <div class="search">
-      <p>
-        Aliquam varius, metus eu ullamcorper gravida, ligula tortor mollis sem, maximus
-        feugiat massa est ut ligula. Vestibulum ante ipsum primis in faucibus orci luctus
-        et ultrices posuere cubilia curae; Sed porttitor volutpat nibh. Aliquam vitae ante
-        a augue scelerisque fringilla pellentesque vel nunc. Quisque non enim leo. Nam
-        semper lectus vel mauris laoreet rutrum. Proin eu ipsum ornare, interdum ex a,
-        luctus tellus. Sed aliquet sem turpis, ac lobortis dui gravida sit amet. Nam
-        gravida placerat ultrices. Morbi non arcu magna. Phasellus molestie condimentum
-        dui, at gravida felis condimentum at. Etiam euismod, ante ut congue eleifend, orci
-        orci commodo elit, sed dictum metus turpis vitae nulla. Duis rhoncus augue enim, a
-        hendrerit ipsum feugiat tempus. Quisque ac dui viverra, dictum nisl quis,
-        scelerisque ipsum.
-      </p>
-      <Combobox v-model="selectedMovie">
-        <ComboboxInput @change="query = $event.target.value" />
-        <ComboboxOptions>
-          <ComboboxOption v-for="movie in filteredMovies" :key="movie.id" :value="movie">
-            {{ movie.title }}
-          </ComboboxOption>
-        </ComboboxOptions>
-      </Combobox>
+  <!-- <Teleport to="body">
+    <div v-if="isOpen" class="g-modal g-modal-layout-main">
+      <div ref="modalContentRef" class="g-modal-content">
+        <div
+          :class="{
+            'g-modal-content-header': true,
+            'no-results': !filteredMovies.length,
+          }"
+        >
+          <input v-model="query" placeholder="Search for movie titles" />
+        </div>
+        <div v-if="filteredMovies.length" class="g-modal-content-body">
+          <div>
+            <div v-for="movie in filteredMovies" :key="movie.id" :value="movie">
+              {{ movie.title }}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </Dialog>
+  </Teleport> -->
 </template>
 
-<script setup lang="ts">
-import {
-  Dialog,
-  Combobox,
-  ComboboxInput,
-  ComboboxOptions,
-  ComboboxOption,
-} from '@headlessui/vue'
+<script lang="ts" setup>
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 
-const isOpen = ref(true)
+// TODO: Should definetly create a modal component.
+const isOpen = ref(false)
+const modalContentRef = ref<HTMLDivElement | null>(null)
 
-function open() {
-  isOpen.value = true
-}
+// TODO: fix warning and functioniallity. maybe just without destroy or move code into component.
+// useOnClickOutsideOf(modalContentRef, () => (isOpen.value = !isOpen.value))
+// watch(modalContentRef, (element) => {
+//   if (element) {
+//     useOnClickOutsideOf(modalContentRef, close)
+//   }
+// })
 
-function close() {
-  isOpen.value = false
-}
-
-const modalRef = ref()
-
-useOnClickOutsideOf(modalRef, close)
-
-// LIST
+// TODO: List component and request code below...
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 type SearchMovieResponse = {
@@ -93,7 +80,6 @@ const movies: SearchMovieResponseItemMock[] = [
   { id: 4, title: 'Mad Max: Fury Road' },
   { id: 5, title: 'Parasite' },
 ]
-const selectedMovie = ref(null)
 const query = ref('')
 const filteredMovies = computed(() =>
   !query.value
@@ -105,20 +91,7 @@ const filteredMovies = computed(() =>
 </script>
 
 <style scoped>
-.search {
-  display: grid;
-  grid-auto-flow: column;
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-}
-
-.icon {
-  height: 24px;
-  cursor: pointer;
-  color: orange;
-
-  &:hover {
-    color: var(--color-primary-500);
-  }
+.no-results {
+  border-radius: var(--modal-border-radius);
 }
 </style>

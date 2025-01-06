@@ -1,3 +1,5 @@
+/* TODO: Generate with "Material Theme Builder" */
+
 :root {
   --font-sans: 'Roboto Flex';
   --font-serif: 'Rokkitt';
@@ -43,5 +45,10 @@
 body {
   font-family: var(--font-sans);
   font-variation-settings: 'wght' var(--font-pw-4);
-  color: var(--color-text);
+}
+
+.g-h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-hs-5);
+  font-variation-settings: 'wght' var(--font-hw-5);
 }

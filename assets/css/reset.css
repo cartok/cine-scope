@@ -10,10 +10,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  min-height: 100vh;
-}
-
 * {
   font: inherit;
   margin: 0;
@@ -27,9 +23,8 @@ body {
 
 button {
   cursor: pointer;
-
   &:disabled {
-    cursor: var(--cursor-disabled, pointer);
+    cursor: default;
   }
 }
 
@@ -49,9 +44,9 @@ img,
 picture,
 video,
 svg {
-  /* display: inline-grid;
+  display: inline-grid;
   max-width: 100%;
-  height: auto; */
+  height: auto;
 }
 
 a:active,

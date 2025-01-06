@@ -18,6 +18,7 @@
   grid-auto-flow: column;
   gap: 1rem;
   font-size: var(--font-ps-5);
+  white-space: nowrap;
 }
 
 .separator {

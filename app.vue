@@ -1,16 +1,13 @@
 <template>
-  <ul ref="skipLinks" class="skip-links">
-    <li>
-      <a href="#nav">Skip to navigation</a>
-      <a href="#main">Skip to main content</a>
-    </li>
-  </ul>
-  <div class="g-icon-fixed-16"></div>
-  <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <ul ref="skipLinks" class="skip-links">
+      <li>
+        <a href="#nav">Skip to navigation</a>
+        <a href="#main">Skip to main content</a>
+      </li>
+    </ul>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
@@ -30,8 +27,6 @@ watch(
     skipLinks.value.firstChild.focus()
   },
 )
-
-useState('illumination', () => 'dark')
 </script>
 
 <style scoped>

@@ -48,23 +48,19 @@ Could create a minimalistic search UI in the header, which would redirect to the
 
 ## 6. Improve UI
 
-- [ ] general
-  - [ ] font(s): https://google-fonts.nuxtjs.org/getting-started/setup
-        use `fontaine`?
-  - [ ] style
-  - [ ] (optional) animations
-  - [ ] (optional) logo
-  - [ ] (optional) dark/light mode
-- [ ] tablet
-- [ ] mobile
+- [ ] use `fontaine` or static fonts for initial page load (no cache)
+- [ ] finish dark/light mode & material colors
+- [ ] tablet & mobile optimizations, breakpoints
+- [ ] material typography
+- [ ] create logo as svg
 
 ## 7. Improve Quality
 
 - [x] prettier
 - [ ] vue-axe-next
 - [ ] check and improve on web vitals
-- [ ] (optional) i18n
-- [ ] (optional) git commit and push hooks
+- [ ] i18n
+- [ ] git commit and push hooks
 
 ## x. Add start page content
 

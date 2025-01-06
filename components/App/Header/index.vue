@@ -15,15 +15,20 @@
 
 <style scoped>
 .header {
-  padding: var(--space-4) var(--space-6);
   border-bottom: 1px solid var(--color-primary-500);
 }
 
 .content {
+  height: 100%;
   display: grid;
+  gap: var(--space-4);
+
   margin: 0 auto;
-  max-width: 900px;
+  max-width: var(--layout-header-max-width);
+
   grid-auto-flow: column;
+  /* grid-template-columns: repeat(3, auto); */
+  grid-auto-columns: auto;
   justify-content: space-between;
   align-items: center;
   font-variant: var(--font-ps-4);
@@ -32,6 +37,7 @@
 .actions {
   display: grid;
   grid-auto-flow: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
+  justify-content: end;
 }
 </style>

@@ -13,4 +13,12 @@
   --space-10: calc(var(--\#space) * 10);
   --space-11: calc(var(--\#space) * 11);
   --space-12: calc(var(--\#space) * 12);
+  --space-13: calc(var(--\#space) * 13);
+  --space-14: calc(var(--\#space) * 14);
+  --space-15: calc(var(--\#space) * 15);
+  --space-16: calc(var(--\#space) * 16);
+  --space-17: calc(var(--\#space) * 17);
+  --space-18: calc(var(--\#space) * 18);
+  --space-19: calc(var(--\#space) * 19);
+  --space-20: calc(var(--\#space) * 20);
 }

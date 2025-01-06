@@ -1,9 +1,8 @@
-<!-- TODO: How to sync query params with URL properly? -->
 <template>
   <div>
     <section>
       <header>
-        <h1>FILTER PAGE CONTENT</h1>
+        <h1 class="g-h1">Filter Page</h1>
       </header>
     </section>
   </div>
