@@ -3,7 +3,10 @@
     <div class="content">
       <AppHeaderLogo />
       <AppHeaderNavigation />
-      <AppHeaderSearch />
+      <div class="actions">
+        <AppHeaderSearch />
+        <AppHeaderColorSchemeToggle />
+      </div>
     </div>
   </header>
 </template>
@@ -24,5 +27,11 @@
   justify-content: space-between;
   align-items: center;
   font-variant: var(--font-ps-4);
+}
+
+.actions {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--space-1);
 }
 </style>

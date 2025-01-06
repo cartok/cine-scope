@@ -1,4 +1,4 @@
-@layer reset, base, globals;
+@layer reset, base, globals, hover;
 
 @import './base/index.css' layer(base);
 @import './reset.css' layer(reset);

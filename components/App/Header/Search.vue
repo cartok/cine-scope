@@ -1,6 +1,6 @@
 <template>
-  <button class="g-button-square">
-    <MagnifyingGlassIcon class="g-icon-fixed-24" @click="open" />
+  <button class="g-button -square">
+    <MagnifyingGlassIcon class="g-icon -fixed-24" @click="open" />
   </button>
   <Dialog ref="modalRef" :open="isOpen" @close="close">
     <div class="search">

@@ -6,11 +6,8 @@
   // EXTENSION: dbaeumer.vscode-eslint
   "eslint.useFlatConfig": true,
 
-  // "editor.quickSuggestions": {
-  //   "other": true,
-  //   "comments": false,
-  //   "strings": true
-  // },
+  // EXTENSION: antfu.goto-alias
+  "editor.gotoLocation.multipleDefinitions": "goto",
 
   // Allow CSS `@scope` rule
   "css.lint.unknownAtRules": "ignore",

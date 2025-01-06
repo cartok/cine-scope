@@ -49,9 +49,9 @@ img,
 picture,
 video,
 svg {
-  display: inline-grid;
+  /* display: inline-grid;
   max-width: 100%;
-  height: auto;
+  height: auto; */
 }
 
 a:active,

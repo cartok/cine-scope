@@ -30,6 +30,8 @@ watch(
     skipLinks.value.firstChild.focus()
   },
 )
+
+useState('illumination', () => 'dark')
 </script>
 
 <style scoped>
