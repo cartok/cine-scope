@@ -1,15 +1,13 @@
 <!-- Should propably create it in Figma instead. -->
 
 <template>
-  <NuxtLink class="g-link" to="/">
-    <h1 class="items">
-      <span class="cine">
-        <span class="c">C</span>
-        <span class="ine">ine</span>
-      </span>
-      <span class="scpe">Sc<MagnifyingGlassCircleIcon class="g-icon" />pe</span>
-    </h1>
-  </NuxtLink>
+  <h1 class="items">
+    <span class="cine">
+      <span class="c">C</span>
+      <span class="ine">ine</span>
+    </span>
+    <span class="scpe">Sc<MagnifyingGlassCircleIcon class="g-icon" />pe</span>
+  </h1>
 </template>
 
 <script lang="ts" setup>

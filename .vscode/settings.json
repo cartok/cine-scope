@@ -19,16 +19,35 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.suggest.includeCompletionsForImportStatements": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  // "editor.wordWrap": "wordWrapColumn",
-  // "editor.wordWrapColumn": 90,
+  "editor.wordWrapColumn": 90,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll": "always",
     "source.organizeImports": "never",
     "source.addMissingImports": "always"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 }

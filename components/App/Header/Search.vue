@@ -1,97 +1,125 @@
 <template>
-  <button class="g-button g-button-square">
-    <MagnifyingGlassIcon class="g-icon g-icon-fixed-24" @click="isOpen = !isOpen" />
+  <!-- TODO: add keybinding ctrl + k (open close) -->
+  <!-- TODO: add keybinding esc (close) -->
+  <!-- TODO: add keybinding up and down arrow (keyboard list navigation) -->
+  <!-- TODO: a11y check -->
+  <button class="g-button g-button-square" @click.stop="isOpen = !isOpen">
+    <MagnifyingGlassIcon class="g-icon g-icon-fixed-24" />
   </button>
-  <!-- <Teleport to="body">
+  <Teleport to="body">
     <div v-if="isOpen" class="g-modal g-modal-layout-main">
       <div ref="modalContentRef" class="g-modal-content">
         <div
           :class="{
             'g-modal-content-header': true,
-            'no-results': !filteredMovies.length,
+            'no-results': !movies.length,
           }"
         >
           <input v-model="query" placeholder="Search for movie titles" />
         </div>
-        <div v-if="filteredMovies.length" class="g-modal-content-body">
-          <div>
-            <div v-for="movie in filteredMovies" :key="movie.id" :value="movie">
-              {{ movie.title }}
-            </div>
-          </div>
+        <div v-if="movies.length" class="g-modal-content-body">
+          <ul class="movies">
+            <li v-for="movie in movies" :key="movie.id" class="movie">
+              <h5 class="movie-title">{{ movie.title }}</h5>
+              <p class="movie-description">{{ movie.overview }}</p>
+              <img
+                v-if="movie.poster_path"
+                class="movie-thumbnail"
+                :src="createPosterThumbnailUrl(movie.poster_path)"
+                :alt="`Image of movie ${movie.title}, released ${movie.release_date}`"
+              />
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </Teleport> -->
+  </Teleport>
 </template>
 
 <script lang="ts" setup>
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 
-// TODO: Should definetly create a modal component.
 const isOpen = ref(false)
-const modalContentRef = ref<HTMLDivElement | null>(null)
+const modalContentRef = ref<HTMLElement | null>(null)
+const onClickOutside = useOnClickOutside(modalContentRef, () => {
+  if (!isOpen.value) {
+    return
+  }
+  isOpen.value = false
+})
 
-// TODO: fix warning and functioniallity. maybe just without destroy or move code into component.
-// useOnClickOutsideOf(modalContentRef, () => (isOpen.value = !isOpen.value))
-// watch(modalContentRef, (element) => {
-//   if (element) {
-//     useOnClickOutsideOf(modalContentRef, close)
-//   }
-// })
+watch(modalContentRef, (element) => {
+  if (element) {
+    window.removeEventListener('click', onClickOutside)
+    window.addEventListener('click', onClickOutside)
+  } else {
+    window.removeEventListener('click', onClickOutside)
+  }
+})
 
-// TODO: List component and request code below...
+onBeforeUnmount(() => {
+  window.removeEventListener('click', onClickOutside)
+})
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type SearchMovieResponse = {
-  page: number
-  results: SearchMovieResponseItem[]
-  total_pages: 2
-  total_results: 24
+function createPosterThumbnailUrl(posterPath: string) {
+  return `https://image.tmdb.org/t/p/w92` + posterPath
 }
 
-type SearchMovieResponseItem = {
-  adult: boolean
-  backdrop_path: string
-  genre_ids: number[]
-  id: number
-  original_language: string // ja|de|en...
-  original_title: string
-  overview: string
-  popularity: 11.479
-  poster_path: string
-  release_date: string // "2000-11-18" -> transform to date
-  title: string
-  video: boolean
-  vote_average: number // 6.7
-  vote_count: number
-}
-
-type SearchMovieResponseItemMock = {
-  id: number
-  title: string
-}
-
-const movies: SearchMovieResponseItemMock[] = [
-  { id: 1, title: 'Inception' },
-  { id: 2, title: 'The Grand Budapest Hotel' },
-  { id: 3, title: 'Interstellar' },
-  { id: 3, title: 'Interstellar 2' },
-  { id: 4, title: 'Mad Max: Fury Road' },
-  { id: 5, title: 'Parasite' },
-]
 const query = ref('')
-const filteredMovies = computed(() =>
-  !query.value
-    ? []
-    : movies.filter((movie) => {
-        return movie.title.toLowerCase().includes(query.value.toLowerCase())
-      }),
-)
+const debouncedQuery = useDebounce(query, 750)
+const { data } = useLazyFetch('/api/search/movie', {
+  immediate: false,
+  query: {
+    query: debouncedQuery.value,
+    page: 1,
+  },
+  watch: [debouncedQuery],
+})
+
+const movies = computed(() => data.value?.results || [])
+
+watch(movies, () => console.log('movies changed', movies))
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .no-results {
   border-radius: var(--modal-border-radius);
+}
+
+.movies {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.movie {
+  display: grid;
+  grid-template-areas:
+    'title year thumbnail'
+    'description description description';
+  grid-template-rows: auto auto; /* hier muss ich noch beide restricten und fallback image brauch ich auch oder ich zeige nichts an ja ist besser, wegen cls muss ihc aber vermutlich die höhe restricten */
+  grid-template-columns: 1fr auto auto; /* hier noch den letzten restricten aber erstmal das image angeuckn */
+}
+
+.movie-title {
+  grid-area: title;
+}
+
+.movie-year {
+  grid-area: year;
+  font-size: var(--font-ps-2);
+  font-feature-settings: 'wght' var(--font-pw-2);
+  color: var(--color-neutral-500);
+}
+
+.movie-description {
+  grid-area: description;
+  font-size: var(--font-ps-2);
+  font-feature-settings: 'wght' var(--font-pw-2);
+  color: var(--color-neutral-500);
+  @include mixins.truncate(2);
+}
+
+.movie-thumbnail {
+  grid-area: thumbnail;
 }
 </style>

@@ -11,11 +11,19 @@
   </header>
 </template>
 
-<script setup lang="ts"></script>
+<style>
+:root {
+  --layout-header-height: 130px;
+  --layout-header-max-width: 900px;
+}
+</style>
 
 <style scoped>
 .header {
   border-bottom: 1px solid var(--color-primary-500);
+  height: var(--layout-header-height);
+  padding: 0px var(--page-padding-x-desktop);
+  background-color: var(--color-bg);
 }
 
 .content {
@@ -27,7 +35,6 @@
   max-width: var(--layout-header-max-width);
 
   grid-auto-flow: column;
-  /* grid-template-columns: repeat(3, auto); */
   grid-auto-columns: auto;
   justify-content: space-between;
   align-items: center;

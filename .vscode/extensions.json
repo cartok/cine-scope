@@ -6,9 +6,12 @@
     "esbenp.prettier-vscode",
     "Vue.volar",
     "antfu.goto-alias",
+    // TODO: Help fixing the CSS extension, if possible...
+    // Maybe switch to some other IDE...
     "pucelle.vscode-css-navigation",
     "EditorConfig.EditorConfig",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "foxundermoon.shell-format"
   ],
   "unwantedRecommendations": ["octref.vetur", "pranaygp.vscode-css-peek"]
 }

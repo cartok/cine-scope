@@ -10,13 +10,12 @@
   - [x] content area
 - [x] create empty pages
   - [x] /
-    - [x] redirect from `/` to `/filter` for now
-  - [x] /filter
+  - [x] /scope
   - [x] /details
 
 ## 2. Searchbar Functionality
 
-- [ ] implement plain text search (first page results are enough).
+- [x] implement plain text search (first page results are enough).
 
 ## 3. Movie-Detail Page
 
@@ -39,16 +38,15 @@ Could create a minimalistic search UI in the header, which would redirect to the
   - [ ] title (asc)
   - [ ] title (desc)
   - [ ] release_date
-  - [ ] ... others
+  - [ ] ... other
 
 ## 5. Advanced Filtering
 
 - [ ] add more filters
-- [ ] maybe dropdown UI instead of table UI
+- [ ] dropdown UI instead of table UI
 
 ## 6. Improve UI
 
-- [ ] use `fontaine` or static fonts for initial page load (no cache)
 - [ ] finish dark/light mode & material colors
 - [ ] tablet & mobile optimizations, breakpoints
 - [ ] material typography
@@ -57,9 +55,10 @@ Could create a minimalistic search UI in the header, which would redirect to the
 ## 7. Improve Quality
 
 - [x] prettier
-- [ ] vue-axe-next
+- [ ] for a11y use vue-axe-next but take a look at WAVE aswell
 - [ ] check and improve on web vitals
 - [ ] i18n
+- [ ] serve fonts statically
 - [ ] git commit and push hooks
 
 ## x. Add start page content
@@ -69,3 +68,4 @@ Not a part of the task.
 - Current Cinema Program -> /movie/now_playing
 - Popular -> /movie/popular
 - Top Rated -> /movie/top_rated
+- ... other

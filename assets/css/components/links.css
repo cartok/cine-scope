@@ -1,11 +1,18 @@
 .g-link {
-  &:focus {
+  &.g-link-text-active {
     cursor: default;
   }
 }
 
 .g-link-text {
-  &:hover:not(:active) {
+  color: var(--color-neutral-500);
+
+  &:hover:not(:is(.g-link-text-active)) {
     text-decoration: underline;
+    font-variation-settings: 'GRAD' 150;
   }
+}
+
+.g-link-text-active {
+  color: var(--color-fg);
 }

@@ -1,7 +1,7 @@
-@layer reset, base, globals, hover;
+@layer reset, base, globals;
 
 @import './base/index.css' layer(base);
 @import './reset.css' layer(reset);
 
-/* These globals exist only temporarily. */
+/* These should become components later. */
 @import './components/index.css' layer(globals);
