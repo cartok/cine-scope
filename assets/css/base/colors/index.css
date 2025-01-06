@@ -1,3 +1,10 @@
+@import './dark-hc.css';
+@import './dark-mc.css';
+@import './dark.css';
+@import './light-hc.css';
+@import './light-mc.css';
+@import './light.css';
+
 :root {
   color-scheme: light dark;
 
