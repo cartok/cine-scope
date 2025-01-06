@@ -1,5 +1,11 @@
 .g-link {
-  &:hover {
+  &:focus {
+    cursor: default;
+  }
+}
+
+.g-link-text {
+  &:hover:not(:active) {
     text-decoration: underline;
   }
 }

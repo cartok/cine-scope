@@ -1,6 +1,6 @@
 <!-- Should propably create it in Figma instead. -->
 <template>
-  <NuxtLink to="/">
+  <NuxtLink class="g-link" to="/">
     <h1 class="items">
       <span class="cine">
         <span class="c">C</span>

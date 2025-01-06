@@ -1,12 +1,12 @@
 <template>
   <nav class="navigation">
     <ul class="list">
-      <li class="item">
-        <NuxtLink class="g-link" to="/">Explore</NuxtLink>
+      <li>
+        <NuxtLink class="g-link g-link-text" to="/">Explore</NuxtLink>
       </li>
       <div class="separator" />
       <li>
-        <NuxtLink to="/filter">Filter</NuxtLink>
+        <NuxtLink class="g-link g-link-text" to="/filter">Filter</NuxtLink>
       </li>
     </ul>
   </nav>

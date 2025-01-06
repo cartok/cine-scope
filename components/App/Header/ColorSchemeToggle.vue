@@ -1,6 +1,6 @@
 <template>
-  <button class="g-button-square">
-    <component :is="icon" class="g-icon -fixed-24" @click="toggleColorScheme" />
+  <button class="g-button g-button-square">
+    <component :is="icon" class="g-icon g-icon-fixed-24" @click="toggleColorScheme" />
   </button>
 </template>
 
