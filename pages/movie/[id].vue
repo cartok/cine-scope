@@ -19,7 +19,6 @@
 <script setup lang="ts">
 const route = useRoute()
 const { data } = await useFetch(`/api/movie-details/${route.params.id}`)
-console.log('movie:', data.value)
 
 // TODO: Handle page load errors in middleware and create a error page - something?
 // const router = useRouter()

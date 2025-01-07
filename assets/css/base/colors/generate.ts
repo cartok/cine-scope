@@ -34,10 +34,10 @@ Basic idea:
     --color-bg: --color-x-h;
   }
 }
-
-UPDATE: Die Idee geht wohl doch nicht auf...
 ```
 */
 
-const file = await Bun.file('./material-theme.json').text()
-console.log(file)
+;(async () => {
+  const file = await Bun.file('./material-theme.json').text()
+  console.log(file)
+})()
