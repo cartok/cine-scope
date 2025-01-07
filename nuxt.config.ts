@@ -42,6 +42,7 @@ export default defineNuxtConfig({
   // TODO: Variable Fonts: Es werden nur die 400er font statt variable fonts geladen.
   // Man kann nur weights definieren. Eventuell ist es besser ohne das Modul zu gehen
   // und einfach per CSS zu importieren und preload hints anzulegen.
+  // TODO: Prefetch hint für Roboto fehlt -> Font Flash...
   googleFonts: {
     preconnect: true,
     prefetch: true,
