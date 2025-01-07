@@ -173,6 +173,8 @@ watch(ArrowUp, (value) => {
 }
 
 .movie {
+  height: 231px; // Thumnail height
+  box-sizing: content-box;
   display: grid;
   grid-template-areas:
     'title year thumbnail'
@@ -180,13 +182,14 @@ watch(ArrowUp, (value) => {
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr auto v-bind(thumbnailWidthPx);
   gap: var(--space-8);
-  background-color: var(--color-secondary-500);
+  background-color: var(--color-primary-200);
   border-radius: 10px;
   padding: var(--space-4);
 }
 
 .movie-title {
   grid-area: title;
+  color: var(--color-secondary-700);
 }
 
 .movie-year {
@@ -200,6 +203,8 @@ watch(ArrowUp, (value) => {
 
 .movie-thumbnail {
   grid-area: thumbnail;
+  border-radius: 10px;
+  border: 2px solid white;
 }
 
 .movie-thumbnail-placeholder {
