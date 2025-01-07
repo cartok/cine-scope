@@ -1,3 +1,5 @@
+// TODO: Use https://vueuse.org/core/useColorMode/
+
 type ColorScheme = 'light' | 'dark'
 
 export const useColorScheme = () =>

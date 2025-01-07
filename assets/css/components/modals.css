@@ -20,7 +20,8 @@
 .g-modal-layout-main {
   grid-template-areas: '.' 'content';
   grid-template-rows: var(--layout-header-height) auto;
-  grid-template-columns: calc(var(--layout-content-max-width) - 500px);
+  /* TODO: Maybe define modal widths in the instances and use variables for unification to be more flexible - the search modal should be customizable. */
+  grid-template-columns: calc(var(--layout-content-max-width) - 400px);
   gap: var(--space-12);
 }
 
@@ -37,6 +38,8 @@
 :root {
   --modal-border-radius: 8px;
 }
+
+/* TODO: Set `padding`s in modal instances to have better control over scrollbar positions */
 
 .g-modal-content-header {
   padding: var(--space-4);

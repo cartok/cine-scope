@@ -39,5 +39,5 @@ UPDATE: Die Idee geht wohl doch nicht auf...
 ```
 */
 
-// TODO: Bun wird nicht erkannt, tsconfig lib entry nötig?
-await Bun.file('material-theme.json').text()
+const file = await Bun.file('./material-theme.json').text()
+console.log(file)

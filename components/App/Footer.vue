@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="content">
       <aside class="tmdb-attribution">
-        <span class="tmdb-notice">
+        <span class="g-text-label g-text-label-normal">
           This product uses the TMDB API but is not endorsed or certified by
         </span>
         <NuxtImg
@@ -49,11 +49,5 @@
   justify-content: end;
   align-items: center;
   gap: var(--space-2);
-}
-
-.tmdb-notice {
-  font-size: var(--font-ps-3);
-  font-feature-settings: 'wght' var(--font-pw-1);
-  color: var(--color-fg);
 }
 </style>

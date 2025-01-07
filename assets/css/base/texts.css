@@ -42,17 +42,14 @@
   --font-hw-5: 800;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,GRAD,YTAS,YTLC,YTUC@8..144,-10..0,25..151,-200..150,649..854,416..570,528..760&display=block');
-
-body {
-  font-family: 'Roboto Flex';
-}
+/* Der Import wirft ein Warning weil imports am Anfang stehen sollen, aber wenn ich ihn an den Anfang schiebe gibt's Probleme mit den CSS layers, reset überschreibt dann base... Keine Ahnung warum. */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,slnt,wdth,wght,GRAD,YTAS,YTFI,YTLC,YTUC@8..144,-10..0,25..151,100..1000,-200..150,649..854,715,416..570,528..760&display=block');
 
 .g-text-title {
   font-family: var(--font-extra);
 
   /* TODO: Finish basic typography rules. */
-  + .g-text-body {
+  .g-typography & + .g-text-body {
     margin-top: 1rem;
   }
 }
@@ -90,8 +87,20 @@ body {
 }
 
 .g-text-body-small {
-  font-size: var(--font-ps-4);
-  font-variation-settings: 'GRAD' -150;
+  font-size: var(--font-ps-5);
+  font-variation-settings:
+    'GRAD' 130,
+    'wght' 400;
 }
 
-/* TODO: Create label classes and use them for navigation links */
+.g-text-label {
+  font-family: var(--font-sans);
+}
+
+.g-text-label-normal {
+  font-size: var(--font-ps-3);
+  font-variation-settings:
+    'wght' var(--font-pw-4),
+    'GRAD' 100;
+  color: var(--color-fg);
+}
