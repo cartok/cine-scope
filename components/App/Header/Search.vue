@@ -88,7 +88,7 @@ watch(movies, () => console.log('movies changed', movies))
 const { ArrowDown, ArrowUp, Escape } = useMagicKeys()
 
 const input = ref<HTMLInputElement>()
-const { Ctrl_K } = useMagicKeys({
+useMagicKeys({
   passive: false,
   onEventFired(e) {
     // TODO: Somehow the event is prevented even if `!e.shiftKey` prevents executing it.
@@ -101,10 +101,11 @@ const { Ctrl_K } = useMagicKeys({
 watch(isOpen, async (value, oldValue) => {
   if (oldValue === false) {
     await nextTick()
-    input.value?.focus()
+    input.value!.focus()
   } else {
-    console.log('input exists? 2', input.value)
-    input.value?.blur()
+    input.value!.blur()
+    console.log('clear input?')
+    query.value = ''
   }
 })
 
@@ -113,10 +114,12 @@ watch(Escape, () => {
 })
 
 watch(ArrowDown, (value) => {
+  // TODO: Add functionallity once list renders.
   console.log('ArrowDown', value)
 })
 
 watch(ArrowUp, (value) => {
+  // TODO: Add functionallity once list renders.
   console.log('ArrowUp', value)
 })
 </script>

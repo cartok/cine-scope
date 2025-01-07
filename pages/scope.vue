@@ -38,10 +38,6 @@
 </template>
 
 <style lang="scss" scoped>
-// @use '~/assets/css/index' as *;
-// @use '~/assets/css/base/texts' as *;
-// @use '~/assets/css/mixins/index' as mixins;
-
 .example-text {
   @include mixins.truncate(4);
 }
