@@ -1,3 +1,10 @@
+<!-- 
+  TODO: The switch is not fully working yet, compare with chrome dev-tools scheme switch.
+  TODO: There are solutions I should consider using instead:
+        - https://vueuse.org/core/useDark/
+        - https://vueuse.org/core/usePreferredColorScheme/
+        - https://vueuse.org/core/usePreferredContrast/
+-->
 <template>
   <button class="g-button g-button-square">
     <component :is="icon" class="g-icon g-icon-fixed-24" @click="toggleColorScheme" />

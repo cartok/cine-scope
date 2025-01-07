@@ -49,6 +49,8 @@ Could create a minimalistic search UI in the header, which would redirect to the
 
 - [ ] finish dark/light mode & material colors
 - [ ] tablet & mobile optimizations, breakpoints
+      thereby make use of these features and maybe more: - https://vueuse.org/core/useScreenOrientation/ - https://vueuse.org/core/useScreenSafeArea/ - https://vueuse.org/core/useSSRWidth/
+- [ ] RTL?
 - [ ] material typography
 - [ ] create logo as svg
 
