@@ -17,9 +17,9 @@
 
 - [x] implement plain text search (first page results are enough).
 
-## 3. Movie-Detail Page
+## 3. Movie-Detail Page (minimalistic)
 
-- [ ] create movie detail page content
+- [x] create movie detail page content
 
 ## 4. Base Filtering & Sorting
 
