@@ -21,12 +21,13 @@
         </div>
         <div v-if="movies.length" class="g-modal-content-body">
           <ul class="movies">
-            <li
-              v-for="(movie, index) in movies"
-              :key="movie.id"
-              :ref="(el) => (listElementRefs[index] = el as HTMLLIElement)"
-            >
-              <NuxtLink class="movie" :to="`/movie/${movie.id}`" @click="isOpen = false">
+            <li v-for="(movie, index) in movies" :key="movie.id">
+              <NuxtLink
+                :ref="(el) => (movieLinkRefs[index] = el as HTMLLIElement)"
+                class="movie"
+                :to="`/movie/${movie.id}`"
+                @click="isOpen = false"
+              >
                 <h5 class="movie-title g-text-title g-text-title-small">
                   {{ movie.title }}
                 </h5>
@@ -127,34 +128,34 @@ watch(Escape, () => {
   isOpen.value = false
 })
 
-const listElementRefs = ref<HTMLLIElement[]>([])
-watch(ArrowDown, async (value) => {
+const movieLinkRefs = ref<HTMLAnchorElement[]>([])
+watch(ArrowDown, (value) => {
+  // TODO: Die `useMagicKeys` lösung nützt mir hier nichts wenn ich nicht default preventen kann (scroll)?
   console.log('ArrowDown', value)
-  if (!listElementRefs.value.length) {
+  if (!value || !movieLinkRefs.value.length) {
     return
   }
-  const activeElement = useActiveElement()
 
-  const activeListElement = listElementRefs.value.find(
-    (listElement) => listElement === activeElement.value,
+  const firstMovieLink = movieLinkRefs.value[0]
+  const activeElement = import.meta.server
+    ? null
+    : (document.activeElement as HTMLElement)
+  const activeMovieLink = movieLinkRefs.value.find(
+    (listElement) => listElement === activeElement,
   )
 
-  if (activeListElement) {
-    const nextListElement = activeListElement.nextElementSibling as HTMLLIElement
+  const nextMovieLink =
+    (activeMovieLink?.nextElementSibling as HTMLAnchorElement) || firstMovieLink
 
-    if (nextListElement) {
-      nextListElement.focus()
-    } else {
-      // `activeListElement` must be last element -> goto first
-      listElementRefs.value[0].focus()
-    }
-  } else {
-    listElementRefs.value[0].focus()
-  }
+  console.log('firstMovieLink:', firstMovieLink)
+  console.log('activeMovieLink:', activeMovieLink)
+  console.log('nextMovieLink:', nextMovieLink)
+  // TODO: Hier stimmt was nicht...
+  nextMovieLink.focus()
 })
 watch(ArrowUp, (value) => {
   console.log('ArrowUp', value)
-  if (!listElementRefs.value) {
+  if (!movieLinkRefs.value) {
     return
   }
 })
