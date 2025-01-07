@@ -21,19 +21,21 @@
 <style scoped>
 .footer {
   grid-area: footer;
-  height: 200px;
+
+  height: 150px;
   border-top: 1px solid var(--color-secondary-500);
   padding: var(--space-4) var(--page-padding-x-desktop);
   background-color: var(--color-bg);
 }
 
 .content {
+  height: 100%;
+  width: 100%;
+  max-width: var(--layout-header-max-width);
+  margin: 0 auto;
+
   display: grid;
   gap: var(--space-5);
-
-  margin: 0 auto;
-  max-width: var(--layout-header-max-width);
-
   grid-template-areas: '. .' '. tmdb';
   grid-template-rows: 1fr auto;
   grid-template-columns: 1fr auto;
@@ -46,7 +48,7 @@
   grid-auto-flow: column;
   justify-content: end;
   align-items: center;
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 
 .tmdb-notice {

@@ -3,6 +3,18 @@
   "files.trimTrailingWhitespace": false,
   "files.insertFinalNewline": false,
 
+  // Editor performance & clean search
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.nuxt": true
+  },
+  "search.exclude": {
+    ".output": true,
+    ".nuxt": true,
+    ".vercel": true,
+    ".vscode": true
+  },
+
   // EXTENSION: dbaeumer.vscode-eslint
   "eslint.useFlatConfig": true,
 
