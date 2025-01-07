@@ -26,7 +26,8 @@
 </template>
 
 <script setup lang="ts">
-const routeMatchesPath = useRouteMatchesPath()
+// TODO: Finish
+// const routeMatchesPath = useRouteMatchesPath()
 </script>
 
 <style>
