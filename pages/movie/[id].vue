@@ -5,6 +5,7 @@
         v-if="data?.poster_path"
         preload
         :src="useTmdbImageUrl(data!.poster_path, 'w500')"
+        width="500"
       />
       <div v-else />
       <header class="g-typography">
@@ -37,6 +38,7 @@ console.log('movie:', data.value)
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 500px auto;
+  /* justify-content: stretch; */
   gap: var(--space-10);
 }
 </style>
