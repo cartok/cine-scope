@@ -40,28 +40,6 @@
 <script lang="ts" setup>
 import { MagnifyingGlassIcon } from '@heroicons/vue/24/solid'
 
-const isOpen = ref(false)
-const modalContentRef = ref<HTMLElement | null>(null)
-const onClickOutside = useOnClickOutside(modalContentRef, () => {
-  if (!isOpen.value) {
-    return
-  }
-  isOpen.value = false
-})
-
-watch(modalContentRef, (element) => {
-  if (element) {
-    window.removeEventListener('click', onClickOutside)
-    window.addEventListener('click', onClickOutside)
-  } else {
-    window.removeEventListener('click', onClickOutside)
-  }
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('click', onClickOutside)
-})
-
 function toggleIsOpen() {
   isOpen.value = !isOpen.value
 }
@@ -70,23 +48,40 @@ function createPosterThumbnailUrl(posterPath: string) {
   return `https://image.tmdb.org/t/p/w92` + posterPath
 }
 
+const isOpen = ref(false)
+const modalContentRef = ref<HTMLElement | null>(null)
+const onClickOutside = useOnClickOutside(modalContentRef, () => {
+  if (!isOpen.value) {
+    return
+  }
+  isOpen.value = false
+})
+watch(modalContentRef, (element) => {
+  if (element) {
+    window.removeEventListener('click', onClickOutside)
+    window.addEventListener('click', onClickOutside)
+  } else {
+    window.removeEventListener('click', onClickOutside)
+  }
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('click', onClickOutside)
+})
+
 const query = ref('')
 const debouncedQuery = useDebounce(query, 750)
 const { data } = useLazyFetch('/api/search/movie', {
   immediate: false,
   query: {
-    query: debouncedQuery.value,
+    query: query.value,
     page: 1,
   },
   watch: [debouncedQuery],
 })
-
 const movies = computed(() => data.value?.results || [])
-
 watch(movies, () => console.log('movies changed', movies))
 
 const { ArrowDown, ArrowUp, Escape } = useMagicKeys()
-
 const input = ref<HTMLInputElement>()
 useMagicKeys({
   passive: false,
@@ -104,20 +99,16 @@ watch(isOpen, async (value, oldValue) => {
     input.value!.focus()
   } else {
     input.value!.blur()
-    console.log('clear input?')
     query.value = ''
   }
 })
-
 watch(Escape, () => {
   isOpen.value = false
 })
-
 watch(ArrowDown, (value) => {
   // TODO: Add functionallity once list renders.
   console.log('ArrowDown', value)
 })
-
 watch(ArrowUp, (value) => {
   // TODO: Add functionallity once list renders.
   console.log('ArrowUp', value)

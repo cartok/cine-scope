@@ -33,6 +33,7 @@ type SearchMovieResponse = {
 
 export default defineEventHandler(async (event) => {
   const query = getQuery<SearchMovieParams>(event)
+  console.log({ query })
   if (!query.query) return null
   const config = useRuntimeConfig()
   const response = await $fetch<SearchMovieResponse>(
