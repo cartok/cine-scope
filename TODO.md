@@ -57,6 +57,7 @@ Could create a minimalistic search UI in the header, which would redirect to the
 ## 7. Improve Quality
 
 - [x] prettier
+- [ ] resolve all 'TODO' comments
 - [ ] for a11y use vue-axe-next but take a look at WAVE aswell
 - [ ] check and improve on web vitals
 - [ ] i18n
@@ -71,3 +72,7 @@ Not a part of the task.
 - Popular -> /movie/popular
 - Top Rated -> /movie/top_rated
 - ... other
+
+## VUE USE!
+
+Absolut abartig gute library... wirklich unglaublich. Braucht einiges an Zeit, die library ist riesig und deckt echt alles mögliche sauber ab. Muss man sich Zeit zum stöbern nehmen, sonst verpasst man einiges und schreib code den es bereits gibt. Einfach heftigster Kraftschock(?). :o

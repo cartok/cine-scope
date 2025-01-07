@@ -1,3 +1,4 @@
+// TODO: use https://vueuse.org/core/onClickOutside/
 import type { Ref } from 'vue'
 
 export default (

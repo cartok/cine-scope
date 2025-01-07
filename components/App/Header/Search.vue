@@ -1,9 +1,10 @@
+<!-- TODO: add keybinding ctrl + k (open close) -->
+<!-- TODO: add keybinding esc (close) -->
+<!-- TODO: add keybinding up and down arrow (keyboard list navigation) -->
+<!-- TODO: a11y checks -->
+
 <template>
-  <!-- TODO: add keybinding ctrl + k (open close) -->
-  <!-- TODO: add keybinding esc (close) -->
-  <!-- TODO: add keybinding up and down arrow (keyboard list navigation) -->
-  <!-- TODO: a11y check -->
-  <button class="g-button g-button-square" @click.stop="isOpen = !isOpen">
+  <button class="g-button g-button-square" @click.stop="toggleIsOpen">
     <MagnifyingGlassIcon class="g-icon g-icon-fixed-24" />
   </button>
   <Teleport to="body">
@@ -15,7 +16,7 @@
             'no-results': !movies.length,
           }"
         >
-          <input v-model="query" placeholder="Search for movie titles" />
+          <input ref="input" v-model="query" placeholder="Search for movie titles" />
         </div>
         <div v-if="movies.length" class="g-modal-content-body">
           <ul class="movies">
@@ -61,6 +62,10 @@ onBeforeUnmount(() => {
   window.removeEventListener('click', onClickOutside)
 })
 
+function toggleIsOpen() {
+  isOpen.value = !isOpen.value
+}
+
 function createPosterThumbnailUrl(posterPath: string) {
   return `https://image.tmdb.org/t/p/w92` + posterPath
 }
@@ -79,6 +84,41 @@ const { data } = useLazyFetch('/api/search/movie', {
 const movies = computed(() => data.value?.results || [])
 
 watch(movies, () => console.log('movies changed', movies))
+
+const { ArrowDown, ArrowUp, Escape } = useMagicKeys()
+
+const input = ref<HTMLInputElement>()
+const { Ctrl_K } = useMagicKeys({
+  passive: false,
+  onEventFired(e) {
+    // TODO: Somehow the event is prevented even if `!e.shiftKey` prevents executing it.
+    if (e.ctrlKey && e.key === 'k' && e.type === 'keydown' && !e.shiftKey) {
+      e.preventDefault()
+      toggleIsOpen()
+    }
+  },
+})
+watch(isOpen, async (value, oldValue) => {
+  if (oldValue === false) {
+    await nextTick()
+    input.value?.focus()
+  } else {
+    console.log('input exists? 2', input.value)
+    input.value?.blur()
+  }
+})
+
+watch(Escape, () => {
+  isOpen.value = false
+})
+
+watch(ArrowDown, (value) => {
+  console.log('ArrowDown', value)
+})
+
+watch(ArrowUp, (value) => {
+  console.log('ArrowUp', value)
+})
 </script>
 
 <style scoped lang="scss">
