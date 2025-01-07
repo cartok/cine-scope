@@ -1,7 +1,12 @@
 <template>
   <div>
     <section class="section">
-      <NuxtImg preload :src="useTmdbImageUrl(data!.poster_path, 'w500')" />
+      <NuxtImg
+        v-if="data?.poster_path"
+        preload
+        :src="useTmdbImageUrl(data!.poster_path, 'w500')"
+      />
+      <div v-else />
       <header class="g-typography">
         <h1 class="g-text-title g-text-title-large">{{ data?.title }}</h1>
         <p class="g-text-body g-text-body-large">{{ data?.overview }}</p>
@@ -31,6 +36,7 @@ console.log('movie:', data.value)
 .section {
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: 500px auto;
   gap: var(--space-10);
 }
 </style>
