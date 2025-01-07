@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/eslint-config-prettier": "^6.11.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "glob": "^11.0.0",
