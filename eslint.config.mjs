@@ -1,3 +1,4 @@
+// @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
 import pluginVueA11y from 'eslint-plugin-vuejs-accessibility'
 import eslintConfigPrettier from 'eslint-config-prettier'
