@@ -2,7 +2,6 @@
   <nav class="navigation">
     <ul class="list">
       <li>
-        <!-- TO -->
         <NuxtLink
           class="g-link g-link-text"
           to="/scope"
