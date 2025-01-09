@@ -39,10 +39,6 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/index.css'],
   eslint: {},
-  // TODO: Variable Fonts: Es werden nur die 400er font statt variable fonts geladen.
-  // Man kann nur weights definieren. Eventuell ist es besser ohne das Modul zu gehen
-  // und einfach per CSS zu importieren und preload hints anzulegen.
-  // TODO: Prefetch hint für Roboto fehlt -> Font Flash...
   googleFonts: {
     preconnect: true,
     prefetch: true,
@@ -51,10 +47,6 @@ export default defineNuxtConfig({
       // TODO: Create SVG for the banner & remove those fonts
       Monoton: [400], // Logo
       Aldrich: [400], // Logo
-      Rokkitt: true,
-      Teko: {
-        wght: '300..700',
-      },
     },
   },
   postcss: {
@@ -63,8 +55,8 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/': { redirect: '/scope' },
-    '/scope': { isr: true },
+    '/': { redirect: '/filter' },
+    '/filter': { isr: true },
     '/discover': { prerender: true },
     '/details/**': { static: 3600 },
   },

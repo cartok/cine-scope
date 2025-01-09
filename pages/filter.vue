@@ -2,7 +2,7 @@
   <div>
     <section>
       <header class="g-typography">
-        <h1 class="g-text-title g-text-title-large">Scope Page</h1>
+        <h1 class="g-text-title g-text-title-large">Filter Page</h1>
         <p class="g-text-body g-text-body-medium example-text">
           Mauris quis vulputate eros. Nunc placerat bibendum pulvinar. Integer ac massa
           lobortis, egestas nunc in, tempus odio. Mauris mattis, lacus in lobortis mattis,

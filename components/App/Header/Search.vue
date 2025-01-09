@@ -37,12 +37,14 @@
                 <p class="movie-year g-text-label g-text-label-normal">
                   {{ new Date(movie.release_date).toLocaleDateString() }}
                 </p>
+                <!-- TODO: Manually preload first visible images before displaying results -->
                 <img
                   v-if="movie.poster_path"
                   class="movie-thumbnail"
                   :src="useTmdbImageUrl(movie.poster_path, thumbnailWidthToken)"
                   :alt="`Image of movie ${movie.title}, released ${movie.release_date}`"
                   :width="thumbnailWidth"
+                  loading="lazy"
                 />
                 <div v-else class="movie-thumbnail-placeholder" />
               </NuxtLink>
