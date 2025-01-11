@@ -4,15 +4,15 @@
       <aside class="tmdb-attribution">
         <span class="g-text-label g-text-label-normal">
           This product uses the TMDB API but is not endorsed or certified by
+          <NuxtImg
+            class="tmdb-logo"
+            alt="TMDB Logo as API usage requirement"
+            format="svg"
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+            preload
+            width="75"
+          />
         </span>
-        <NuxtImg
-          class="tmdb-logo"
-          alt="TMDB Logo as API usage requirement"
-          format="svg"
-          src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
-          preload
-          width="75"
-        />
       </aside>
     </div>
   </footer>
@@ -43,11 +43,5 @@
 
 .tmdb-attribution {
   grid-area: tmdb;
-
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: end;
-  align-items: center;
-  gap: var(--space-2);
 }
 </style>
