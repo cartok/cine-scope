@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-11-01',
-  modules: ['@nuxt/eslint', '@nuxtjs/google-fonts', '@vueuse/nuxt', '@nuxt/image'],
+  modules: ['@nuxt/eslint', '@vueuse/nuxt', '@nuxt/image'],
   devtools: { enabled: false },
   nitro: {
     vercel: {
@@ -39,16 +39,6 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/index.css'],
   eslint: {},
-  googleFonts: {
-    preconnect: true,
-    prefetch: true,
-    preload: true,
-    families: {
-      // TODO: Create SVG for the banner & remove those fonts
-      Monoton: [400], // Logo
-      Aldrich: [400], // Logo
-    },
-  },
   postcss: {
     plugins: {
       'postcss-nested': {},

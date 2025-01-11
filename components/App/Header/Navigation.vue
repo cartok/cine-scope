@@ -4,10 +4,10 @@
       <li>
         <NuxtLink
           class="g-link g-link-text"
-          to="/scope"
+          to="/filter"
           exact-active-class="g-link-text-active"
         >
-          Scope
+          Filter
         </NuxtLink>
       </li>
       <div class="separator" />
