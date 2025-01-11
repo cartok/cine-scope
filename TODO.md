@@ -3,9 +3,9 @@
 ## 1.
 
 - [x] Fix fonts (static loading, optimziation, cleanup, render blocking -> 0 flash)
-- [ ] Logo svg + mobile version "CScope" + Favicon
+- [x] Logo svg + mobile version "CScope" + Favicon
 - [ ] Material color scheme & darkmode integration
-- [ ] Material like typography
+- [ ] Material-like typography
 - [ ] Mobile & Tablet Optimierung
 - [ ] Cleanup, UI Verbesserungen, TODOS
 
