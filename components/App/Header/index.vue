@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="content">
-      <AppHeaderLogo />
+      <NuxtImg src="/logo.svg" alt="Cine Scope Logo" height="68" preload />
       <AppHeaderNavigation />
       <div class="actions">
         <AppHeaderSearch />
