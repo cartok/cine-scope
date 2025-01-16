@@ -13,5 +13,11 @@
     "dbaeumer.vscode-eslint",
     "foxundermoon.shell-format"
   ],
-  "unwantedRecommendations": ["octref.vetur", "pranaygp.vscode-css-peek"]
+  "unwantedRecommendations": [
+    "octref.vetur",
+    "pranaygp.vscode-css-peek",
+    "gencer.html-slim-scss-css-class-completion",
+    "clinyong.vscode-css-modules",
+    "andrewleedham.vscode-css-modules"
+  ]
 }

@@ -1,8 +1,4 @@
 {
-  // EXTENSION: EditorConfig.EditorConfig
-  "files.trimTrailingWhitespace": false,
-  "files.insertFinalNewline": false,
-
   // Editor performance & clean search
   "files.exclude": {
     "**/node_modules": true,
@@ -15,8 +11,24 @@
     ".vscode": true
   },
 
+  // EXTENSION: EditorConfig.EditorConfig
+  "files.trimTrailingWhitespace": false,
+  "files.insertFinalNewline": false,
+
+  // EXTENSION: pucelle.vscode-css-navigation
+  "CSSNavigation.activeCSSFileExtensions": ["css", "scss"],
+  "CSSNavigation.activeHTMLFileExtensions": ["html", "vue"],
+  "CSSNavigation.ignoreFilesBy": [".gitignore"],
+  "CSSNavigation.excludeGlobPatterns": [
+    "**/node_modules/**",
+    ".vercel",
+    ".output",
+    ".nuxt"
+  ],
+
   // EXTENSION: dbaeumer.vscode-eslint
   "eslint.useFlatConfig": true,
+  "eslint.probe": ["javascript", "typescript", "vue"],
 
   // EXTENSION: antfu.goto-alias
   "editor.gotoLocation.multipleDefinitions": "goto",
