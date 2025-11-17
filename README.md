@@ -24,6 +24,3 @@
 - Styling: Tailwind
 - Code Management: GitHub
 - Deplopyment: Vercel
-
-[old track](./TODO-old.md)
-[new track](./TODO.md)
