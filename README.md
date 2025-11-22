@@ -1,6 +1,6 @@
 # Cine Scope
 
-Eine ehemalige Bewerbungsaufgabe. Dabei habe ich die Chance genutzt Nuxt kennen zu lernen und neue CSS Features auszuprobieren.
+Eine ehemalige Bewerbungsaufgabe. Dabei habe ich die Chance genutzt Nuxt kennen zu lernen und neue CSS Features auszuprobieren. Es soll keine optimale Anwendung darstellen. Ich habe keine Zeit in responsive Design gesteckt...
 
 ## Aufgabe
 
