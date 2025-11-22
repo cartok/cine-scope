@@ -1,6 +1,8 @@
 # Cine Scope
 
-## Challenge 1: Entwicklung der Anwendung
+Eine ehemalige Bewerbungsaufgabe. Dabei habe ich die Chance genutzt Nuxt kennen zu lernen und neue CSS Features auszuprobieren.
+
+## Aufgabe
 
 1. Filmliste erstellen: Entwickle eine Webanwendung, die eine Liste von Filmen anzeigt.
 
